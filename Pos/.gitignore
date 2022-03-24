@@ -1,0 +1,6 @@
+.idea/
+.gradle/
+build/
+reservations/
+emailToSend/
+gradle/
