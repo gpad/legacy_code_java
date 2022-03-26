@@ -73,7 +73,7 @@ class PaymentServiceWrapMethod {
 // NEW FEATURE - Save on file the PayRecord before to send!!!
 //
 
-class PaymentServiceWrapClass extends PaymentService{
+class PaymentServiceWrapClass extends PaymentService {
 
     public void pay(List<PayRecord> payments)  {
 		saveOnFile(payments);
@@ -84,3 +84,4 @@ class PaymentServiceWrapClass extends PaymentService{
 	void saveOnFile(List<PayRecord> payments) {
 	}
 };
+

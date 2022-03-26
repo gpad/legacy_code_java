@@ -28,7 +28,7 @@ class TooComplexToPutUnderTestSproutMethod {
     List<Integer> _alreadySent;
 
     // Develop it in TDD
-    static private Collection<Integer> uniqueValue(List<Integer> v) {
+    static public List<Integer> uniqueValue(List<Integer> v) {
         // create uniq vector ...
         return v;
     }

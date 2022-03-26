@@ -21,10 +21,9 @@ public class Locker
 {
 	private final String code;
 	private final HttpClient http_client;
-	String _code;
-	HttpClient _http_client;
-	String _inserted;
-	LockerStatus _status = LockerStatus.open;
+	private String inserted;
+	private LockerStatus status = LockerStatus.open;
+
 	public Locker(String code, HttpClient http_client)
 	{
 		this.code = code;
@@ -33,15 +32,15 @@ public class Locker
 	}
 
 	public void add_digit(char digit) {
-		_inserted += digit;
-		_http_client.post("www.LockerServer.com", _inserted);
-		if (_inserted.equals(_code)) {
-			_status = LockerStatus.open;
-			_http_client.post("www.LockerServer.com", "open");
+		this.inserted += digit;
+		this.http_client.post("www.LockerServer.com", this.inserted);
+		if (this.inserted.equals(this.code)) {
+			this.status = LockerStatus.open;
+			this.http_client.post("www.LockerServer.com", "open");
 		}
 		else {
-			_status = LockerStatus.closed;
-			_http_client.post("www.LockerServer.com", "closed");
+			this.status = LockerStatus.closed;
+			this.http_client.post("www.LockerServer.com", "closed");
 		}
 	}
 };
